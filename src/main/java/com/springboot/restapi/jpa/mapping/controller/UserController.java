@@ -26,6 +26,7 @@ public class UserController {
         System.out.println("This is conflict testing");
         log.info("UserController : addUsers : user details {}", userDetail);
         UserDetail userDetail1 = userService.addUser(userDetail);
+        System.out.println("This is conflict testing");
         if (userDetail1 == null) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
