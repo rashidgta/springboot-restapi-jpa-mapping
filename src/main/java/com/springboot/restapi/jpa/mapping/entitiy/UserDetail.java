@@ -22,9 +22,10 @@ public class UserDetail {
     private String name;
     private String phone;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "userDetail", orphanRemoval = true)
 //    @JsonManagedReference
-    @JoinColumn(name = "user_id_fk", referencedColumnName = "userId")
+//    @JoinColumn(name = "user_id_fk", referencedColumnName = "userId")
     @JsonProperty("orderDetails")
     private List<OrderDetail> orderDetail = new ArrayList<>();
+//    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
 }

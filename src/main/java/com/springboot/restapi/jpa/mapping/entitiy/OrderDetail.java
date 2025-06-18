@@ -18,8 +18,8 @@ public class OrderDetail {
     private int id;
     private String productName;
 
-//    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL)
 //    @JsonBackReference
-//    @JoinColumn(name = "user_id_owning_fk", referencedColumnName = "userId")
-//    private UserDetail userDetail;
+    @JoinColumn(name = "user_id_owning_fk", referencedColumnName = "userId")
+    private UserDetail userDetail;
 }
