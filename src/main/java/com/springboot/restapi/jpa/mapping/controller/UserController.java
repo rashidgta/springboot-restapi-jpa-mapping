@@ -23,6 +23,7 @@ public class UserController {
 
     @PostMapping("/user")
     public ResponseEntity<?> addUsers(@RequestBody UserDetail userDetail) {
+        System.out.println("This is conflict testing");
         log.info("UserController : addUsers : user details {}", userDetail);
         UserDetail userDetail1 = userService.addUser(userDetail);
         System.out.println("This is conflict testing");
