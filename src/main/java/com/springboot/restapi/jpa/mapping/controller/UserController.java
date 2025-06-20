@@ -47,7 +47,7 @@ public class UserController {
 
     @PutMapping ("/user/{userId}")
     public ResponseEntity<UserDetail> updateUsers(@RequestBody UserDetail userDetail,
-                                                  @PathVariable ("userId")  int userId) {
+                                                  @PathVariable int userId) {
        UserDetail userDetail1 = userService.updateUser(userDetail,userId);
        if (userDetail1 == null) {
            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
@@ -56,7 +56,7 @@ public class UserController {
     }
 
     @DeleteMapping("/user/{userId}")
-    public ResponseEntity<Void> deleteUsers(@PathVariable("userId") int userId) {
+    public ResponseEntity<Void> deleteUsers(@PathVariable int userId) {
         try {
             userService.deleteUser(userId);
             return ResponseEntity.ok().build();
